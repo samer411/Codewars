@@ -1,8 +1,13 @@
 function duplicateCount(text) {
-  text = text.toLowerCase();
-  let result = 0;
-  text.filter((e) => if(text.count(e) > 1)
-  { ++result });
-  return result;
+  try {
+    return text
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("")
+      .match(/(.)\1+/g).length;
+  } catch (e) {
+    return 0;
+  }
 }
-console.log(duplicateCount("abBcde"));
+console.log(duplicateCount(""));
