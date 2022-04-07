@@ -6,15 +6,11 @@ function toCamelCase(str) {
       r = str.split("-");
     }
     for (let i = 1; i < r.length; i++) {
-      let ch = str[i][0].toUpperCase();
-      console.log(str[i]);
-      console.log(ch);
-      console.log(str[i].slice(1));
-      str[i] = ch + str[i].slice(1);
-      console.log(str[i]);
+      let ch = r[i][0].toUpperCase();
+      r[i] = ch + r[i].slice(1);
     }
     return r.join("");
   }
 }
 
-console.log(toCamelCase("the_stealth_warrior"));
+console.log(toCamelCase("the-stealth-warrior"));
