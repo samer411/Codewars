@@ -3,7 +3,11 @@ function order(words) {
   let result = [];
   for (word of arr) {
     for (letter of word) {
-      result.splic;
+      if (!isNaN(letter)) {
+        result[letter - 1] = word;
+      }
     }
   }
+  return result.join(" ");
 }
+console.log(order("is2 Thi1s T4est 3a"));
